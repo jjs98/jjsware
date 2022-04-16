@@ -1,0 +1,1 @@
+docker build -f $PSScriptRoot\Dockerfile -t jjs98/jjschmitz:latest $PSScriptRoot\..

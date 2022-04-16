@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "build"
+		},
+		{
+			"path": "JJSchmitz\\ClientApp"
+		}
+	],
+	"settings": {
+		"html.format.wrapAttributes": "force-aligned"
+	}
+}
