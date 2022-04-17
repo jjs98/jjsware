@@ -16,7 +16,7 @@ RUN yarn
 
 FROM pre-build-client AS build-client
 COPY src/client .
-RUN yarn build-prod --output-path /app/publish
+RUN yarn build --output-path /app/publish
 
 FROM base AS final
 WORKDIR /app

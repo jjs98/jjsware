@@ -8,6 +8,6 @@
 		}
 	],
 	"settings": {
-		"html.format.wrapAttributes": "force-aligned"
+		"html.format.wrapAttributes": "aligned-multiple"
 	}
 }

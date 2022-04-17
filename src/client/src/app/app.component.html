@@ -1,6 +1,43 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
-</body>
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" [mode]="'side'">
+    <div class="sidenav-content">
+      <img src="../assets/JJS.ico" />
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button" routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span>{{'Home' | translate}}</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/profile">
+        <mat-icon>person</mat-icon>
+        <span>{{'Profile' | translate}}</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-button class="menu-button" routerLink="/about">
+        <mat-icon>info</mat-icon>
+        <span>{{'About' | translate}}</span>
+      </button>
+      <div class="spacer"></div>
+      <mat-divider></mat-divider>
+      <div class="language">
+        <mat-icon>translate</mat-icon>
+        <mat-select class="language-select" [(ngModel)]="currentLanguage">
+          <mat-option *ngFor="let language of languages" [value]="language" (click)="switchLanguage(language)">
+            {{language | translate}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,15 @@
+mat-card {
+    margin: 32px;
+    max-width: 600px;
+  
+    .content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+  
+      img {
+        margin: 32px;
+      }
+    }
+  }
+  
