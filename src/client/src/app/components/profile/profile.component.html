@@ -6,7 +6,7 @@
         <mat-card-content>
             <div class="content">
                 <img
-                     src="https://github-readme-stats.vercel.app/api?username=jjs98&count_private=true&show_icons=true&include_all_commits=true&theme=radical" />
+                     src="https://github-readme-stats.vercel.app/api?username=jjs98&count_private=true&show_icons=true&include_all_commits=true&theme=darcula&locale={{getCurrentLanguage()}}" />
             </div>
         </mat-card-content>
     </mat-card>
@@ -17,8 +17,23 @@
         <mat-card-content>
             <div class="content">
                 <img
-                     src="https://github-readme-stats.vercel.app/api/top-langs/?username=jjs98&layout=compact&theme=radical" />
+                     src="https://github-readme-stats.vercel.app/api/top-langs/?username=jjs98&theme=darcula&locale={{getCurrentLanguage()}}" />
             </div>
         </mat-card-content>
     </mat-card>
+    <div *ngIf="getRepositories() as repositories">
+        <mat-card *ngFor="let name of repositories.names">
+            <mat-card-title>GitHub</mat-card-title>
+            <mat-card-subtitle>
+                <a href="https://github.com/jjs98/{{name}}" target="blank">jjs98/{{name}}</a>
+            </mat-card-subtitle>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <div class="content">
+                    <img
+                         src="https://github-readme-stats.vercel.app/api/pin/?username=jjs98&repo={{name}}&show_owner=true&theme=darcula" />
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>

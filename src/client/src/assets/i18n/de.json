@@ -6,5 +6,6 @@
   "About":"Über",
   "AboutMe": "Über mich",
   "Introduction": "Hallo! Mein Name ist Jens. Ich bin 23 Jahre alt und arbeite derzeit als Softwareentwickler. Neben der Arbeit entwickle ich gerne Sachen wie diese Website, um mein Wissen ständig zu verbessern. Derzeit lerne ich, wie man Docker-Container baut und betreibt. Mehr über meine Interessen kann man auf meinem Profil nachlesen.",
-  "Languages": "Sprachen"
+  "Languages": "Sprachen",
+  "Language": "Sprache"
 }

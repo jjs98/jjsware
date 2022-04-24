@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatDrawerMode, MatSidenav } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
 
   private readonly english: string = 'en';
   private readonly german: string = 'de';
-  public languages: string[] = [this.english, this.german];
+  public availableLanguages: string[] = [this.english, this.german];
 
   public currentLanguage: string;
 
@@ -24,9 +24,23 @@ export class AppComponent {
   }
 
   public switchLanguage(language: string): void {
-    if (this._translate.currentLang != language) {
+    if (language && this._translate.currentLang != language) {
       this._translate.use(language);
       this.currentLanguage = language;
     }
+  }
+
+  public getMode(): MatDrawerMode {
+    return this.isMobileView() ? 'over' : 'side';
+  }
+
+  public navItemClicked(): void {
+    if (this.getMode() == 'over'){
+      this.sidenav.close();
+    }
+  }
+
+  public isMobileView(): boolean {
+    return window.innerWidth < 600;
   }
 }

@@ -3,36 +3,32 @@
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
+  <div class="spacer"></div>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon> more_vert </mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav="matSidenav" [mode]="'side'">
+  <mat-sidenav #sidenav="matSidenav" [mode]="getMode()" [autoFocus]="false">
     <div class="sidenav-content">
-      <img src="../assets/JJS.ico" />
-      <mat-divider></mat-divider>
-      <button mat-button class="menu-button" routerLink="/home">
+      <div *ngIf="!isMobileView()">
+        <img src="../assets/JJS.ico" />
+        <mat-divider></mat-divider>
+      </div>
+      <button mat-button class="menu-button" routerLink="/home" (click)="navItemClicked()">
         <mat-icon>home</mat-icon>
         <span>{{'Home' | translate}}</span>
       </button>
-      <button mat-button class="menu-button" routerLink="/profile">
+      <button mat-button class="menu-button" routerLink="/profile" (click)="navItemClicked()">
         <mat-icon>person</mat-icon>
         <span>{{'Profile' | translate}}</span>
       </button>
       <mat-divider></mat-divider>
-      <button mat-button class="menu-button" routerLink="/about">
+      <button mat-button class="menu-button" routerLink="/about" (click)="navItemClicked()">
         <mat-icon>info</mat-icon>
         <span>{{'About' | translate}}</span>
       </button>
-      <div class="spacer"></div>
-      <mat-divider></mat-divider>
-      <div class="language">
-        <mat-icon>translate</mat-icon>
-        <mat-select class="language-select" [(ngModel)]="currentLanguage">
-          <mat-option *ngFor="let language of languages" [value]="language" (click)="switchLanguage(language)">
-            {{language | translate}}
-          </mat-option>
-        </mat-select>
-      </div>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -41,3 +37,12 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="languages">{{'Language' | translate}}</button>
+</mat-menu>
+
+<mat-menu #languages="matMenu">
+  <button mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
+    translate}}</button>
+</mat-menu>

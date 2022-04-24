@@ -1,9 +1,14 @@
 mat-toolbar {
   border-bottom: 2px solid var(--primary-color);
+  height: 64px;
+
+  .spacer {
+    width: -webkit-fill-available;
+  }
 }
 
 mat-sidenav-container {
-  height: calc(100vh - 65px);
+  height: calc(100vh - 64px);
 
   mat-sidenav {
     width: 200px;
@@ -15,8 +20,8 @@ mat-sidenav-container {
       display: flex;
       flex-direction: column;
 
-      .spacer {
-        height: -webkit-fill-available;
+      img {
+        width: 100%;
       }
 
       mat-divider {
@@ -32,19 +37,6 @@ mat-sidenav-container {
         font-size: 1rem;
 
         span {
-          margin-left: 10px;
-        }
-      }
-
-      .language {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-left: 10px;
-        margin-bottom: 10px;
-
-        .language-select {
-          width: 120px;
           margin-left: 10px;
         }
       }

@@ -6,5 +6,6 @@
   "About":"About",
   "AboutMe": "About me",
   "Introduction": "Hi! My name is Jens. I am a 23 year old and currently working as a Software Developer. Besides work I like to develop stuff like this website to continuously improve my knowledge. Currently I am learning how to build and run docker container. More about my interests can be found on my profile.",
-  "Languages": "Languages"
+  "Languages": "Languages",
+  "Language": "Language"
 }

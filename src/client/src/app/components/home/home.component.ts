@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  public getFlexDirection(): string {
+    return this.isMobileView() ? 'column' : 'row';
+  }
+
+  public isMobileView(): boolean {
+    return window.innerWidth < 600;
+  }
 }
