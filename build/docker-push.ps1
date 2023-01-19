@@ -1,1 +1,1 @@
-docker push jjs98/jjschmitz:latest
+docker push jjs98/jjsware:latest

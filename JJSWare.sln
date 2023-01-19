@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{E0E9C710
 		build\Dockerfile = build\Dockerfile
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSchmitz", "src\server\JJSchmitz\JJSchmitz.csproj", "{0DC3C133-92FE-40AE-B571-50D19716B5E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSWare", "src\server\JJSchmitz\JJSWare.csproj", "{0DC3C133-92FE-40AE-B571-50D19716B5E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
