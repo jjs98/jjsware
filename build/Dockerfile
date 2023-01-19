@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-server
 WORKDIR /src
-COPY src/server/JJSchmitz .
+COPY src/server/JJSWare .
 RUN dotnet publish -c Release -o /app/publish
 
 FROM arm64v8/node AS pre-build-client
@@ -22,4 +22,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=build-server /app/publish .
 COPY --from=build-client /app/publish ./wwwroot/
-ENTRYPOINT dotnet JJSchmitz.dll
+ENTRYPOINT dotnet JJSWare.dll

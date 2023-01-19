@@ -1243,11 +1243,6 @@
   resolved "https://registry.yarnpkg.com/@mdi/angular-material/-/angular-material-6.6.96.tgz#eed3a6ea42f0ce323200f1eaf33b36be31e2daf9"
   integrity sha512-Ww3hhLx0c2mFP4zP4YfZOcQZJV6g/4EInRj+MR05oYQZetsQrrrAgI9YUqSUV+GMpIAPOaxvO/3Ab5XGFl7DRw==
 
-"@mdi/font@^6.6.96":
-  version "6.6.96"
-  resolved "https://registry.yarnpkg.com/@mdi/font/-/font-6.6.96.tgz#4eee6faee5f44d3ec401d354fb95775cd6699575"
-  integrity sha512-FbcvG9z17hwZ7IwX5XeOR1UYGoLq+gTKq6XNPvJFuCpn599GdiPCJbAmmDBJb+jMYXjKYr0lCxfouWGxDA82sA==
-
 "@ngtools/webpack@13.3.3":
   version "13.3.3"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-13.3.3.tgz#dc8471a89092d6f4074543c56a95ae0549f3470e"

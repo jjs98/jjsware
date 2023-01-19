@@ -11,7 +11,7 @@
         <UserSecretsId>a71a0c41-5902-4eec-935d-c32f907d1c68</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <LangVersion>latest</LangVersion>
-        <OutputPath>..\..\..\bin\$(Configuration)\JJSchmitz</OutputPath>
+        <OutputPath>..\..\..\bin\$(Configuration)\JJSWare</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
