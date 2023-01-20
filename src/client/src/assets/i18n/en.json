@@ -1,11 +1,13 @@
 {
   "de": "Deutsch",
   "en": "English",
-  "Home":"Home",
-  "Profile":"Profile",
-  "About":"About",
-  "AboutMe": "About me",
-  "Introduction": "Hi! My name is Jens. I am a 24 year old and currently working as a Software Developer. Besides work I like to develop stuff like this website to continuously improve my knowledge. More about my interests can be found on my profile.",
-  "Languages": "Languages",
-  "Language": "Language"
+  "app.about": "About",
+  "app.home": "Home",
+  "app.language": "Language",
+  "app.profile": "Profile",
+  "app.test": "Test",
+  "home.introduction": "Hi! My name is Jens. I am a 24 year old and currently working as a Software Developer. Besides work I like to develop stuff like this website to continuously improve my knowledge. More about my interests can be found on my profile.",
+  "home.subtitle": "24, Software Developer",
+  "home.title": "Jens Schmitz",
+  "profile.languages": "Languages"
 }

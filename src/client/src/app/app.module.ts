@@ -21,13 +21,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TestComponent } from './test/test.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, ProfileComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, ProfileComponent, TestComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -46,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'test', component: TestComponent },
     ]),
     TranslateModule.forRoot({
       defaultLanguage: 'en',

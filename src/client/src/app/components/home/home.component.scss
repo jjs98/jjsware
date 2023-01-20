@@ -1,20 +1,13 @@
 mat-card {
-  margin: 16px;
-  max-width: 1400px;
+  max-width: 600px;
+  margin-bottom: 16px;
 
-  .content {
-    display: flex;
-    margin-top: 32px;
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 
-    .profile-picture {
-      width: 256px;
-      height: 256px;
-      border-radius: 128px;
-      margin-right: 16px;
-    }
-
-    span {
-      white-space: break-spaces;
-    }
+  mat-card-header img {
+    margin: 0;
   }
 }

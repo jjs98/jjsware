@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatDrawerMode, MatSidenav } from '@angular/material/sidenav';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
@@ -17,11 +17,19 @@ export class AppComponent {
 
   public currentLanguage: string;
   public isDarkTheme: boolean = true;
+  public isSideNavOpen: boolean = false;
 
-  constructor(private _translate: TranslateService) {
+  public constructor(private _translate: TranslateService) {
     this.currentLanguage = this.english;
     _translate.setDefaultLang(this.currentLanguage);
     _translate.use(this.currentLanguage);
+  }
+
+  public ngOnInit(): void {
+    var sideNavOpen = localStorage.getItem('sideNav');
+    if(sideNavOpen == 'open'){
+      this.isSideNavOpen = true;
+    }
   }
 
   public switchLanguage(language: string): void {
@@ -31,36 +39,34 @@ export class AppComponent {
     }
   }
 
-  public getMode(): MatDrawerMode {
-    return this.isMobileView() ? 'over' : 'side';
-  }
-
   public getTheme(): string {
     var theme = localStorage.getItem('theme');
     if (theme == 'light-theme') {
       this.isDarkTheme = false;
       return theme;
-    }
-    else
-    {
+    } else {
       this.isDarkTheme = true;
       return 'dark-theme';
     }
   }
-  
+
   public switchTheme(): void {
     var theme = this.getTheme();
-    if (theme == 'dark-theme'){
+    if (theme == 'dark-theme') {
       localStorage.setItem('theme', 'light-theme');
-    }
-    else {
+    } else {
       localStorage.setItem('theme', 'dark-theme');
     }
   }
 
-  public navItemClicked(): void {
-    if (this.getMode() == 'over') {
+  public toggleSideNav(): void {
+    if(this.sidenav.opened){
       this.sidenav.close();
+      localStorage.setItem('sideNav', 'closed');
+    }
+    else {
+      this.sidenav.open();
+      localStorage.setItem('sideNav', 'open');
     }
   }
 
