@@ -2,8 +2,9 @@
   <mat-card-title>{{'AboutMe' | translate}}</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <div class="content" [style]="'flex-direction: ' + getFlexDirection() + (isMobileView() ? ';align-items: center;' : '')">
-      <img class="profile-picture" src="https://avatars.githubusercontent.com/u/47151759"/>
+    <div class="content"
+         [style]="'flex-direction: ' + getFlexDirection() + (isMobileView() ? ';align-items: center;' : '')">
+      <img class="profile-picture" src="https://avatars.githubusercontent.com/u/47151759" />
       <span [style]="isMobileView() ? '' : 'font-size: 32px'">{{ 'Introduction' | translate}}</span>
     </div>
   </mat-card-content>
@@ -12,7 +13,8 @@
   <mat-card-title>{{'AboutMe' | translate}}</mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <div class="content" [style]="'flex-direction: ' + getFlexDirection() + (isMobileView() ? ';align-items: center;' : '')">
+    <div class="content"
+         [style]="'flex-direction: ' + getFlexDirection() + (isMobileView() ? ';align-items: center;' : '')">
       <section>
         <div class="example-label">Basic</div>
         <div class="example-button-row">

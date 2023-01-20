@@ -47,9 +47,9 @@
       <mat-icon>{{ isDarkTheme ? "dark_mode" : "light_mode" }}</mat-icon>
     </button>
   </mat-menu>
-  
-    <mat-menu #languages="matMenu">
-      <button mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
-        translate}}</button>
-    </mat-menu>
+
+  <mat-menu #languages="matMenu">
+    <button mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
+      translate}}</button>
+  </mat-menu>
 </div>
