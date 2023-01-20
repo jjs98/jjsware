@@ -1,9 +1,9 @@
 mat-toolbar {
-  border-bottom: 2px solid var(--primary-color);
-  height: 64px;
+  display: flex;
+  flex-direction: row;
 
   .spacer {
-    width: -webkit-fill-available;
+    flex: 1;
   }
 }
 
@@ -30,23 +30,15 @@ mat-sidenav-container {
       }
 
       .menu-button {
-        width: 100%;
-        display: flex;
-        align-items: center;
         justify-content: flex-start;
-        font-size: 1rem;
-
-        span {
-          margin-left: 10px;
-        }
       }
     }
   }
 
   .content {
     height: 100%;
-    border-radius: 10px;
+    width: 100%;
     padding: 16px;
-    overflow: auto;
+    overflow: hidden;
   }
 }
