@@ -1,10 +1,11 @@
 <mat-card>
-  <mat-card-title>{{'AboutMe' | translate}}</mat-card-title>
-  <mat-divider></mat-divider>
+  <mat-card-header>
+    <img mat-card-avatar src="https://avatars.githubusercontent.com/u/47151759" />
+    <mat-card-title>{{'home.title' | translate}}</mat-card-title>
+    <mat-card-subtitle>{{'home.subtitle' | translate}}</mat-card-subtitle>
+  </mat-card-header>
   <mat-card-content>
-    <div class="content" [style]="'flex-direction: ' + getFlexDirection() + (isMobileView() ? ';align-items: center;' : '')">
-      <img class="profile-picture" src="https://avatars.githubusercontent.com/u/47151759"/>
-      <span [style]="isMobileView() ? '' : 'font-size: 32px'">{{ 'Introduction' | translate}}</span>
-    </div>
+    <mat-divider></mat-divider>
+    <p>{{ 'home.introduction' | translate}}</p>
   </mat-card-content>
 </mat-card>

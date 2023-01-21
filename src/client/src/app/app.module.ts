@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,27 +16,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TestComponent } from './test/test.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ProfileComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, AboutComponent, ProfileComponent, TestComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -48,20 +44,22 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSelectModule,
     MatCardModule,
     MatMenuModule,
+    MatListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'test', component: TestComponent },
     ]),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  }),
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

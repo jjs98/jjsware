@@ -1,48 +1,61 @@
-<mat-toolbar class="mat-elevation-z8">
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
-  </button>
-  <div class="spacer"></div>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon> more_vert </mat-icon>
-  </button>
-</mat-toolbar>
-
-<mat-sidenav-container>
-  <mat-sidenav #sidenav="matSidenav" [mode]="getMode()" [autoFocus]="false">
-    <div class="sidenav-content">
-      <div *ngIf="!isMobileView()">
-        <img src="../assets/JJS.ico" />
+<div [class]="'app ' + getTheme()">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" [mode]="isMobileView() ? 'over' : 'side'" [opened]="isSideNavOpen">
+      <div class="sidenav-content">
+        <div *ngIf="!isMobileView()">
+          <img src="../assets/LOGO-TEXT.png" />
+          <mat-divider></mat-divider>
+        </div>
+        <button mat-button class="menu-button" routerLink="/home">
+          <mat-icon>home</mat-icon>
+          <span>{{'app.home' | translate}}</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/profile">
+          <mat-icon>person</mat-icon>
+          <span>{{'app.profile' | translate}}</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/test">
+          <mat-icon>bug_report</mat-icon>
+          <span>{{'app.test' | translate}}</span>
+        </button>
+        <div class="spacer"></div>
         <mat-divider></mat-divider>
+        <button mat-button class="menu-button" routerLink="/about">
+          <mat-icon>info</mat-icon>
+          <span>{{'app.about' | translate}}</span>
+        </button>
       </div>
-      <button mat-button class="menu-button" routerLink="/home" (click)="navItemClicked()">
-        <mat-icon>home</mat-icon>
-        <span>{{'Home' | translate}}</span>
-      </button>
-      <button mat-button class="menu-button" routerLink="/profile" (click)="navItemClicked()">
-        <mat-icon>person</mat-icon>
-        <span>{{'Profile' | translate}}</span>
-      </button>
-      <mat-divider></mat-divider>
-      <button mat-button class="menu-button" routerLink="/about" (click)="navItemClicked()">
-        <mat-icon>info</mat-icon>
-        <span>{{'About' | translate}}</span>
-      </button>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="content">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button mat-icon-button (click)="toggleSideNav()">
+          <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+          <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+        </button>
+        <div class="spacer"></div>
+        <span class="title">JJSWare</span>
+        <div class="spacer"></div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon> more_vert </mat-icon>
+        </button>
+      </mat-toolbar>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="languages">{{'Language' | translate}}</button>
-</mat-menu>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="languages">
+      <mat-icon>language</mat-icon>
+    </button>
+    <button mat-menu-item (click)="switchTheme()">
+      <mat-icon>{{ isDarkTheme ? "dark_mode" : "light_mode" }}</mat-icon>
+    </button>
+  </mat-menu>
 
-<mat-menu #languages="matMenu">
-  <button mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
-    translate}}</button>
-</mat-menu>
+  <mat-menu #languages="matMenu">
+    <button mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
+      translate}}</button>
+  </mat-menu>
+</div>

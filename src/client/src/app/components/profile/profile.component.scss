@@ -1,14 +1,14 @@
 mat-card {
-  margin: 16px;
   max-width: 600px;
+  margin-bottom: 16px;
+  box-shadow:  1px 1px 10px #202020 !important;
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 32px;
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 
-    img {
-      max-width: 100%;
-    }
+  img {
+    width: 100%;
   }
 }
