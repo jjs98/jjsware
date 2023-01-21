@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     var sideNavOpen = localStorage.getItem('sideNav');
-    if(sideNavOpen == 'open'){
+    if (sideNavOpen == 'open') {
       this.isSideNavOpen = true;
     }
   }
@@ -60,17 +60,28 @@ export class AppComponent implements OnInit {
   }
 
   public toggleSideNav(): void {
-    if(this.sidenav.opened){
+    if (this.sidenav.opened) {
       this.sidenav.close();
-      localStorage.setItem('sideNav', 'closed');
-    }
-    else {
+      this.setSideNavCache(false);
+    } else {
       this.sidenav.open();
-      localStorage.setItem('sideNav', 'open');
+      this.setSideNavCache(true);
     }
+  }
+
+  public onSideNavOpenChange(isOpen: boolean): void {
+    this.setSideNavCache(isOpen);
+  }
+
+  public onNavItemClicked(): void {
+    if (this.isMobileView()) this.sidenav.close();
   }
 
   public isMobileView(): boolean {
     return window.innerWidth < 600;
+  }
+
+  private setSideNavCache(isOpen: boolean): void {
+    localStorage.setItem('sideNav', isOpen ? 'open' : 'closed');
   }
 }
