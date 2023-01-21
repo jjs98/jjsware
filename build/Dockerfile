@@ -8,15 +8,16 @@ WORKDIR /src
 COPY src/server/JJSWare .
 RUN dotnet publish -c Release -o /app/publish
 
-FROM arm64v8/node AS pre-build-client
+FROM arm64v8/node:18 AS pre-build-client
 WORKDIR /src
+RUN npm i -g pnpm
 COPY src/client/package.json .
-COPY src/client/yarn.lock .
-RUN yarn
+COPY src/client/pnpm-lock.yaml .
+RUN pnpm install
 
 FROM pre-build-client AS build-client
 COPY src/client .
-RUN yarn build --output-path /app/publish
+RUN pnpm build --output-path /app/publish
 
 FROM base AS final
 WORKDIR /app
