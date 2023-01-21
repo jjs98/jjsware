@@ -16,6 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -42,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSelectModule,
     MatCardModule,
     MatMenuModule,
+    MatListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'home', component: HomeComponent },

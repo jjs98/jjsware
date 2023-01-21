@@ -3,7 +3,7 @@
     <mat-sidenav #sidenav="matSidenav" [mode]="isMobileView() ? 'over' : 'side'" [opened]="isSideNavOpen">
       <div class="sidenav-content">
         <div *ngIf="!isMobileView()">
-          <img src="../assets/JJS.ico" />
+          <img src="../assets/LOGO-TEXT.png" />
           <mat-divider></mat-divider>
         </div>
         <button mat-button class="menu-button" routerLink="/home">
@@ -27,7 +27,7 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar color="primary">
+      <mat-toolbar>
         <button mat-icon-button (click)="toggleSideNav()">
           <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
           <mat-icon *ngIf="sidenav.opened"> close </mat-icon>

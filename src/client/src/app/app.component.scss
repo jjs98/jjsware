@@ -14,6 +14,7 @@ $margin: 16px;
     display: flex;
     flex-direction: row;
     height: $toolbar-height;
+    box-shadow:  0px 1px 10px #202020;
 
     .title {
       font-size: x-large;
@@ -27,6 +28,8 @@ $margin: 16px;
       height: 100%;
       width: 200px;
       text-align: center;
+
+      box-shadow: 1px 0px 10px #202020;
 
       .sidenav-content {
         height: calc(100% - 2 * $margin);
