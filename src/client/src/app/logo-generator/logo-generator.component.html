@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{'logo-generator.title' | translate}}</mat-card-title>
+        <mat-card-subtitle>{{'logo-generator.subtitle' | translate}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <p>{{'logo-generator.introduction' | translate}}</p>
+        <div class="generate-text">
+            <mat-form-field>
+                <mat-label>{{'logo-generator.texttogenerate-textarea.label' | translate}}</mat-label>
+                <input matInput type="text" placeholder="{{'logo-generator.texttogenerate-textarea.placeholder' | translate}}"
+                       [(ngModel)]="textToGenerate">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="generate()">{{'logo-generator.generate-button' |
+                translate}}</button>
+        </div>
+    </mat-card-content>
+</mat-card>
+<canvas #canvas width="500" height="500">
+    Use a proper browser to display this canvas...
+</canvas>

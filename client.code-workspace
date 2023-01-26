@@ -8,6 +8,9 @@
 		}
 	],
 	"settings": {
-		"html.format.wrapAttributes": "aligned-multiple"
+		"html.format.wrapAttributes": "aligned-multiple",
+		"prettier.singleQuote": true,
+		"prettier.singleAttributePerLine": true,
+		"prettier.bracketSameLine": true
 	}
 }

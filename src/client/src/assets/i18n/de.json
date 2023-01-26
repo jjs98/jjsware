@@ -4,11 +4,18 @@
   "app.about": "About",
   "app.home": "Home",
   "app.language": "Sprache",
+  "app.logo-generator": "Logo Generator",
   "app.profile": "Profil",
   "app.test": "Test",
   "about.title": "Genutzte Software",
   "home.introduction": "Hallo! Mein Name ist Jens. Ich bin 24 Jahre alt und arbeite derzeit als Softwareentwickler. Neben der Arbeit entwickle ich gerne Sachen wie diese Website, um mein Wissen ständig zu verbessern. Mehr über meine Interessen kann man auf meinem Profil nachlesen.",
   "home.subtitle": "24, Software Entwickler",
   "home.title": "Jens Schmitz",
+  "logo-generator.title": "Logo Generator",
+  "logo-generator.subtitle": "Bereitgestellt von JJSWare",
+  "logo-generator.introduction": "Mit diesem Tool kannst du ein Logo im gleichen Stil wie mein Logo erstellen.",
+  "logo-generator.generate-button": "Generieren",
+  "logo-generator.texttogenerate-textarea.label": "Text zur Generierung",
+  "logo-generator.texttogenerate-textarea.placeholder": "JJSWare",
   "profile.languages": "Sprachen"
 }

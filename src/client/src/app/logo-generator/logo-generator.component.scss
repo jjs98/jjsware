@@ -1,0 +1,26 @@
+mat-card {
+  max-width: 600px;
+  margin-bottom: 16px;
+  box-shadow: 1px 1px 10px #202020 !important;
+
+  mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .generate-text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    mat-form-field {
+      flex: 1;
+    }
+
+    button {
+      margin-left: 16px;
+    }
+  }
+
+}
