@@ -1,8 +1,107 @@
 @use "@angular/material" as mat;
 
-$my-app-light-primary: mat.define-palette(mat.$indigo-palette);
-$my-app-light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$my-app-light-warn: mat.define-palette(mat.$red-palette);
+$md-primary: (
+  50: #f0fdff,
+  100: #dbf9ff,
+  200: #c3f6ff,
+  300: #aaf2ff,
+  400: #98efff,
+  500: #86ecff,
+  600: #7eeaff,
+  700: #73e7ff,
+  800: #69e4ff,
+  900: #56dfff,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #fbfeff,
+  A700: #e1f9ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-accent: (
+  50: #fcf5ed,
+  100: #f8e6d3,
+  200: #f4d6b6,
+  300: #efc599,
+  400: #ebb883,
+  500: #e8ac6d,
+  600: #e5a565,
+  700: #e29b5a,
+  800: #de9250,
+  900: #d8823e,
+  A100: #ffffff,
+  A200: #fff9f4,
+  A400: #ffdbc1,
+  A700: #ffcda7,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-warn: (
+  50: #fdeded,
+  100: #fad2d2,
+  200: #f7b4b4,
+  300: #f39696,
+  400: #f18080,
+  500: #ee6969,
+  600: #ec6161,
+  700: #e95656,
+  800: #e74c4c,
+  900: #e23b3b,
+  A100: #ffffff,
+  A200: #fffbfb,
+  A400: #ffc8c8,
+  A700: #ffaeae,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-app-light-primary: mat.define-palette($md-primary);
+$my-app-light-accent: mat.define-palette($md-accent);
+$my-app-light-warn: mat.define-palette($md-warn);
 $my-app-light-theme: mat.define-light-theme(
   (
     color: (
