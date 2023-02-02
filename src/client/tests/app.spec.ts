@@ -67,13 +67,6 @@ async function checkIfSideNavVisible(page: Page, expected: boolean) {
     'visibility',
     expected ? 'visible' : 'hidden'
   );
-  //await checkSideNavInLocalStorage(page, expected ? 'opened' : 'closed');
-}
-
-async function checkSideNavInLocalStorage(page: Page, expected: string) {
-  return await page.waitForFunction((e) => {
-    return localStorage['side-nav'] === e;
-  }, expected);
 }
 
 async function checkLanguage(page: Page, expected: string) {

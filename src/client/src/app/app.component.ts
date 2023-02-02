@@ -25,13 +25,13 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    var storageLanguage = localStorage.getItem('locale');
-    var language = this.availableLanguages.find(
+    const storageLanguage = localStorage.getItem('locale');
+    const language = this.availableLanguages.find(
       (lang) => lang === storageLanguage
     );
     if (language) this._translate.use(language);
 
-    var sideNavOpen = localStorage.getItem('side-nav');
+    const sideNavOpen = localStorage.getItem('side-nav');
     if (sideNavOpen == 'open') {
       this.isSideNavOpen = true;
     }
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
   }
 
   public getTheme(): string {
-    var theme = localStorage.getItem('theme');
+    const theme = localStorage.getItem('theme');
     if (theme == 'light-theme') {
       this.isDarkTheme = false;
       return theme;
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
   }
 
   public switchTheme(): void {
-    var theme = this.getTheme();
+    const theme = this.getTheme();
     if (theme == 'dark-theme') {
       localStorage.setItem('theme', 'light-theme');
     } else {

@@ -19,18 +19,18 @@ export class ProfileComponent {
   }
 
   public getRepositories(): Repositories | undefined {
-    var existingRepositories = this.getSavedRepos();
+    const existingRepositories = this.getSavedRepos();
     if (
       existingRepositories?.names?.length > 0 &&
       Date.now() - existingRepositories.timeStamp < 1000 * 60 * 60
     ) {
       return existingRepositories;
     } else {
-      var repos!: Repositories;
+      let repos!: Repositories;
       this._http
         .get('https://api.github.com/users/jjs98/repos')
         .subscribe((repositories: any) => {
-          var repoNames: string[] = [];
+          const repoNames: string[] = [];
           repositories.forEach((repository: any) => {
             repoNames.push(repository.name);
           });
