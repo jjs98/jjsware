@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
