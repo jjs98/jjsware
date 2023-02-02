@@ -9,7 +9,8 @@
         <div class="generate-text">
             <mat-form-field>
                 <mat-label>{{'logo-generator.texttogenerate-textarea.label' | translate}}</mat-label>
-                <input matInput type="text" placeholder="{{'logo-generator.texttogenerate-textarea.placeholder' | translate}}"
+                <input matInput type="text"
+                       placeholder="{{'logo-generator.texttogenerate-textarea.placeholder' | translate}}"
                        [(ngModel)]="textToGenerate">
             </mat-form-field>
             <button mat-raised-button color="primary" (click)="generate()">{{'logo-generator.generate-button' |
@@ -17,6 +18,17 @@
         </div>
     </mat-card-content>
 </mat-card>
-<canvas #canvas width="500" height="500">
-    Use a proper browser to display this canvas...
-</canvas>
+<svg height="500" width="500">
+    <circle cx="250" cy="250" r="10" fill="red" />
+    <circle cx="0" cy="0" r="50px" fill="red" />
+</svg>
+<svg height="500" width="500">
+    <circle cx="0" cy="250" r="50%" fill="pink" />
+</svg>
+<svg width="200" height="200" viewBox="0 0 200 200">
+    <g transform="translate(100,100)" stroke="#000" stroke-width="2">
+      <path d="M0 0-70 70A99 99 0 0 1-70-70Z" fill="blue"/>
+      <path d="M0 0-70-70A99 99 0 0 1 70-70Z" fill="#080"/>
+      <path d="M0 0 70-70A99 99 0 0 1 70 70Z" fill="#dd0"/>
+    </g>
+  </svg>

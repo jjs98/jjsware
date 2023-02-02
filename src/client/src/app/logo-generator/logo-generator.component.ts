@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import characters from '../../assets/characters.json';
 
 @Component({
   selector: 'app-logo-generator',
@@ -41,4 +42,13 @@ export class LogoGeneratorComponent implements OnInit {
       this.canvas.fill();
     }
   }
+
+  /* 
+  tl = top left
+  tr = top right
+  bl = bottom left
+  br = bottom right
+  f = full
+  x = empty
+  */
 }

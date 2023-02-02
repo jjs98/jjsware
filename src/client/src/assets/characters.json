@@ -1,0 +1,5 @@
+{
+  "a": ["tl;f;tr", "f;x;f", "f;f;f", "f;x;f", "f;x;f"],
+  "b": ["f;f;tr", "f;x;f", "f;f;f", "f;x;f", "f;f;br"],
+  "c": ["tl;f;tr", "f;x;f", "f;x;x", "f;x;f", "bl;f;br"]
+}
