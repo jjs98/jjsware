@@ -71,7 +71,7 @@ async function checkIfSideNavVisible(page: Page, expected: boolean) {
 
 async function checkLanguage(page: Page, expected: string) {
   await expect(page.locator('#subtitle')).toContainText(
-    expected === 'en' ? 'Software Developer' : 'Software Entwickler'
+    expected === 'en' ? 'Software Developer' : 'Softwareentwickler'
   );
 }
 
