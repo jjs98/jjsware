@@ -8,9 +8,12 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src/client
+
     steps:
     - uses: actions/checkout@v3
-      working-directory: ./src/client
     - uses: actions/setup-node@v3
       with:
         node-version: 18
