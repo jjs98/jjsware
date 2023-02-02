@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
-		"html.format.wrapAttributes": "aligned-multiple"
+		"html.format.wrapAttributes": "aligned-multiple",
+		"editor.tabSize": 2
 	}
 }

@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +16,22 @@ export class AppComponent implements OnInit {
   private readonly german: string = 'de';
   public availableLanguages: string[] = [this.english, this.german];
 
-  public currentLanguage: string;
   public isDarkTheme: boolean = true;
   public isSideNavOpen: boolean = false;
 
+
   public constructor(private _translate: TranslateService) {
-    this.currentLanguage = this.english;
-    _translate.setDefaultLang(this.currentLanguage);
-    _translate.use(this.currentLanguage);
+    _translate.setDefaultLang(this.english);
   }
 
   public ngOnInit(): void {
-    var sideNavOpen = localStorage.getItem('sideNav');
+    var storageLanguage = localStorage.getItem('locale');
+    var language = this.availableLanguages.find(
+      (lang) => lang === storageLanguage
+    );
+    if (language) this._translate.use(language);
+
+    var sideNavOpen = localStorage.getItem('side-nav');
     if (sideNavOpen == 'open') {
       this.isSideNavOpen = true;
     }
@@ -35,7 +40,7 @@ export class AppComponent implements OnInit {
   public switchLanguage(language: string): void {
     if (language && this._translate.currentLang != language) {
       this._translate.use(language);
-      this.currentLanguage = language;
+      localStorage.setItem('locale', language);
     }
   }
 
@@ -82,6 +87,6 @@ export class AppComponent implements OnInit {
   }
 
   private setSideNavCache(isOpen: boolean): void {
-    localStorage.setItem('sideNav', isOpen ? 'open' : 'closed');
+    localStorage.setItem('side-nav', isOpen ? 'open' : 'closed');
   }
 }

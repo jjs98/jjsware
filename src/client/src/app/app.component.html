@@ -1,6 +1,6 @@
 <div [class]="'app ' + getTheme()">
   <mat-sidenav-container [hasBackdrop]="isMobileView()">
-    <mat-sidenav #sidenav="matSidenav" [mode]="isMobileView() ? 'over' : 'side'" [opened]="isSideNavOpen"
+    <mat-sidenav id="sidenav" #sidenav="matSidenav" [mode]="isMobileView() ? 'over' : 'side'" [opened]="isSideNavOpen"
                  (openedChange)="onSideNavOpenChange($event)">
       <div class="sidenav-content">
         <div *ngIf="!isMobileView()">
@@ -29,14 +29,14 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar>
-        <button mat-icon-button (click)="toggleSideNav()">
+        <button id="toggle-sidenav" mat-icon-button (click)="toggleSideNav()">
           <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
           <mat-icon *ngIf="sidenav.opened">close</mat-icon>
         </button>
         <div class="spacer"></div>
         <span class="title">JJSWare</span>
         <div class="spacer"></div>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
+        <button id="menu-button" mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
         </button>
       </mat-toolbar>
@@ -47,7 +47,7 @@
   </mat-sidenav-container>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="languages">
+    <button id="language-button" mat-menu-item [matMenuTriggerFor]="languages">
       <mat-icon>language</mat-icon>
     </button>
     <button mat-menu-item (click)="switchTheme()">
@@ -56,7 +56,7 @@
   </mat-menu>
 
   <mat-menu #languages="matMenu">
-    <button mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
+    <button id="{{language}}-button" mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
       translate}}</button>
   </mat-menu>
 </div>
