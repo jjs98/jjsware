@@ -17,13 +17,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { MatDatepickerModule, MatDateFnsModule } from '@angular/material/datepicker';
 
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { TestComponent } from './test/test.component';
+import { TestComponent } from './components/test/test.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -32,23 +33,25 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, ProfileComponent, TestComponent],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
     HttpClientModule,
-    MatToolbarModule,
-    MatSidenavModule,
     MatButtonModule,
-    MatIconModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatDateFnsModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatSelectModule,
-    MatCardModule,
-    MatMenuModule,
+    MatIconModule,
     MatListModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatToolbarModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'test', component: TestComponent },
     ]),

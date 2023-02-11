@@ -19,8 +19,4 @@
         <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.3" />
         <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
 </Project>

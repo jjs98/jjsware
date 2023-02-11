@@ -15,9 +15,8 @@ export class AppComponent implements OnInit {
   private readonly german: string = 'de';
   public availableLanguages: string[] = [this.english, this.german];
 
-  public isDarkTheme: boolean = true;
-  public isSideNavOpen: boolean = false;
-
+  public isDarkTheme = true;
+  public isSideNavOpen = false;
 
   public constructor(private _translate: TranslateService) {
     _translate.setDefaultLang(this.english);

@@ -1,5 +1,4 @@
 mat-card {
-  max-width: 600px;
   margin-bottom: 16px;
   box-shadow:  1px 1px 10px #202020 !important;
 
@@ -9,6 +8,6 @@ mat-card {
   }
 
   img {
-    width: 100%;
+    max-width: 100%;
   }
 }

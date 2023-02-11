@@ -1,5 +1,17 @@
 <mat-card>
     <mat-card-header>
+        <mat-card-title>Test Date Type</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <input matInput [matDatepicker]="picker">
+<mat-hint>MM/DD/YYYY</mat-hint>
+<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
         <mat-card-title>Test Title</mat-card-title>
         <mat-card-subtitle>Test Subtitle</mat-card-subtitle>
     </mat-card-header>

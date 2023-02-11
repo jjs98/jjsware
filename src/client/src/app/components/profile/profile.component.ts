@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
-import { Repositories } from '../../models/repository.type';
+import { GitRepositories, Repository } from '../../models/repository.type';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +18,7 @@ export class ProfileComponent {
     return this._translationService.currentLang;
   }
 
-  public getRepositories(): Repositories | undefined {
+  public getRepositories(): GitRepositories | undefined {
     const existingRepositories = this.getSavedRepos();
     if (
       existingRepositories?.names?.length > 0 &&
@@ -26,12 +26,12 @@ export class ProfileComponent {
     ) {
       return existingRepositories;
     } else {
-      let repos!: Repositories;
+      let repos!: GitRepositories;
       this._http
         .get('https://api.github.com/users/jjs98/repos')
-        .subscribe((repositories: any) => {
+        .subscribe((repositories: object) => {
           const repoNames: string[] = [];
-          repositories.forEach((repository: any) => {
+          (repositories as Repository[]).forEach((repository: Repository) => {
             repoNames.push(repository.name);
           });
           repos = { names: repoNames, timeStamp: Date.now() };
@@ -41,14 +41,14 @@ export class ProfileComponent {
     }
   }
 
-  private getSavedRepos(): Repositories {
+  private getSavedRepos(): GitRepositories {
     const existingRepositoriesValue = localStorage.getItem('repos');
     return existingRepositoriesValue
       ? JSON.parse(existingRepositoriesValue)
       : {};
   }
 
-  private setSavedRepos(repos: Repositories) {
+  private setSavedRepos(repos: GitRepositories) {
     localStorage.setItem('repos', JSON.stringify(repos));
   }
 }
