@@ -56,7 +56,7 @@
   </mat-menu>
 
   <mat-menu #languages="matMenu">
-    <button id="{{language}}-button" mat-menu-item *ngFor="let language of availableLanguages" (click)="switchLanguage(language)">{{language |
+    <button id="{{language}}-button" mat-menu-item *ngFor="let language of getAvailableLanguages()" (click)="switchLanguage(language)">{{language |
       translate}}</button>
   </mat-menu>
 </div>

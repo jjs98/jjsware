@@ -1,6 +1,6 @@
+import { LanguageService } from './services/language.service';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -11,35 +11,25 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  private readonly english: string = 'en';
-  private readonly german: string = 'de';
-  public availableLanguages: string[] = [this.english, this.german];
-
   public isDarkTheme = true;
   public isSideNavOpen = false;
 
-  public constructor(private _translate: TranslateService) {
-    _translate.setDefaultLang(this.english);
+  public constructor(private _languageService: LanguageService) {
   }
 
   public ngOnInit(): void {
-    const storageLanguage = localStorage.getItem('locale');
-    const language = this.availableLanguages.find(
-      (lang) => lang === storageLanguage
-    );
-    if (language) this._translate.use(language);
-
     const sideNavOpen = localStorage.getItem('side-nav');
     if (sideNavOpen == 'open') {
       this.isSideNavOpen = true;
     }
   }
 
+  public getAvailableLanguages(): string[] {
+    return this._languageService.availableLanguages;
+  }
+
   public switchLanguage(language: string): void {
-    if (language && this._translate.currentLang != language) {
-      this._translate.use(language);
-      localStorage.setItem('locale', language);
-    }
+    this._languageService.switchLanguage(language);
   }
 
   public getTheme(): string {
