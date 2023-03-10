@@ -31,6 +31,8 @@
     "date-fns": "^2.29.3",
     "jquery": "^3.6.3",
     "oidc-client": "^1.11.5",
+    "primeicons": "^6.0.1",
+    "primeng": "^15.2.0",
     "run-script-os": "^1.1.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",

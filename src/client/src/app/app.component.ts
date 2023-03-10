@@ -1,7 +1,7 @@
 import { LanguageService } from './services/language.service';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-
+import { PrimeNGConfig, PrimeIcons, MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,10 +14,26 @@ export class AppComponent implements OnInit {
   public isDarkTheme = true;
   public isSideNavOpen = false;
 
-  public constructor(private _languageService: LanguageService) {
-  }
+  public items: MenuItem[] = [
+    {
+      label: 'language',
+      icon: PrimeIcons.LANGUAGE,
+      items: [{ label: 'en' }, { label: 'de' }],
+    },
+    { 
+      label: 'theme',
+      command: () => this.switchTheme()
+    },
+  ];
+
+  public constructor(
+    private primengConfig: PrimeNGConfig,
+    private _languageService: LanguageService
+  ) {}
 
   public ngOnInit(): void {
+    this.primengConfig.ripple = true;
+
     const sideNavOpen = localStorage.getItem('side-nav');
     if (sideNavOpen == 'open') {
       this.isSideNavOpen = true;
@@ -45,10 +61,15 @@ export class AppComponent implements OnInit {
 
   public switchTheme(): void {
     const theme = this.getTheme();
+    const themeElement = document.getElementById(
+      'app-theme'
+    ) as HTMLLinkElement;
     if (theme == 'dark-theme') {
       localStorage.setItem('theme', 'light-theme');
+      themeElement.href = 'light.css';
     } else {
       localStorage.setItem('theme', 'dark-theme');
+      themeElement.href = 'dark.css';
     }
   }
 

@@ -1,16 +1,32 @@
 <mat-card>
     <mat-card-header>
+        <mat-card-title>Test PrimeNG Type</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <button pButton type="button" class="p-button-info"></button>
+        <button pButton type="button" label="Primary"></button>
+        <button pButton type="button" label="Secondary" class="p-button-secondary"></button>
+        <button pButton type="button" label="Success" class="p-button-success"></button>
+        <button pButton type="button" label="Info" class="p-button-info"></button>
+        <button pButton type="button" label="Warning" class="p-button-warning"></button>
+        <button pButton type="button" label="Help" class="p-button-help"></button>
+        <button pButton type="button" label="Danger" class="p-button-danger"></button>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
         <mat-card-title>Test Date Type</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-            <mat-form-field appearance="fill">
-                <mat-label>{{'test.chooseDate' | translate}}</mat-label>
-                <input matInput [matDatepicker]="picker" [(ngModel)]="date" (dateChange)="onDateChanged()">
-                <mat-hint>{{getDateFormatString()}}</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            {{dateAsString}}
+        <mat-form-field appearance="fill">
+            <mat-label>{{'test.chooseDate' | translate}}</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="date" (dateChange)="onDateChanged()">
+            <mat-hint>{{getDateFormatString()}}</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        {{dateAsString}}
     </mat-card-content>
 </mat-card>
 

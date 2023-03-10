@@ -1,4 +1,4 @@
-<div [class]="'app ' + getTheme()">
+<div class="app">
   <mat-sidenav-container [hasBackdrop]="isMobileView()">
     <mat-sidenav id="sidenav" #sidenav="matSidenav" [mode]="isMobileView() ? 'over' : 'side'" [opened]="isSideNavOpen"
                  (openedChange)="onSideNavOpenChange($event)">
@@ -28,6 +28,16 @@
       </div>
     </mat-sidenav>
     <mat-sidenav-content>
+      <p-menubar>
+        <ng-template pTemplate="start">
+          <button pButton id="toggle-sidenav" icon="pi {{sidenav.opened ? 'pi-times' : 'pi-bars'}}" (click)="toggleSideNav()">
+          </button>
+        </ng-template>
+        <ng-template pTemplate="end">
+          <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+          <button type="button" pButton icon="pi pi-fw pi-list" (click)="menu.toggle($event)"></button>
+        </ng-template>
+      </p-menubar>
       <mat-toolbar>
         <button id="toggle-sidenav" mat-icon-button (click)="toggleSideNav()">
           <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
@@ -56,7 +66,8 @@
   </mat-menu>
 
   <mat-menu #languages="matMenu">
-    <button id="{{language}}-button" mat-menu-item *ngFor="let language of getAvailableLanguages()" (click)="switchLanguage(language)">{{language |
+    <button id="{{language}}-button" mat-menu-item *ngFor="let language of getAvailableLanguages()"
+            (click)="switchLanguage(language)">{{language |
       translate}}</button>
   </mat-menu>
 </div>
