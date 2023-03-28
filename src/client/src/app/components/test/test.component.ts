@@ -34,7 +34,10 @@ export class TestComponent {
       minute: '2-digit',
       second: '2-digit',
       weekday: 'short',
-    }
-    this.dateAsString = new Intl.DateTimeFormat(currentLanguage, options).format(this.date);
+    };
+    this.dateAsString = new Intl.DateTimeFormat(
+      currentLanguage,
+      options
+    ).format(this.date);
   }
 }

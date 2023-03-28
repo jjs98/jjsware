@@ -5,4 +5,4 @@ export type GitRepositories = {
 
 export type Repository = {
   name: string;
-}
+};

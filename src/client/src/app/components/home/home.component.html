@@ -1,11 +1,17 @@
-<mat-card>
+<mat-card class="h-auto w-4/5 m-4 rounded shadow max-w-md">
   <mat-card-header>
-    <img mat-card-avatar alt="JJS-Avatar" src="https://avatars.githubusercontent.com/u/47151759" />
-    <mat-card-title>{{'home.title' | translate}}</mat-card-title>
-    <mat-card-subtitle id="subtitle">{{'home.subtitle' | translate}}</mat-card-subtitle>
+    <img
+      mat-card-avatar
+      alt="JJS-Avatar"
+      src="https://avatars.githubusercontent.com/u/47151759"
+    />
+    <mat-card-title>{{ 'home.title' | translate }}</mat-card-title>
+    <mat-card-subtitle id="subtitle">{{
+      'home.subtitle' | translate
+    }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <mat-divider></mat-divider>
-    <p>{{'home.introduction' | translate}}</p>
+    <mat-divider class="mb-4"></mat-divider>
+    <p>{{ 'home.introduction' | translate }}</p>
   </mat-card-content>
 </mat-card>

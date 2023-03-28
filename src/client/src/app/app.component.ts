@@ -14,8 +14,7 @@ export class AppComponent implements OnInit {
   public isDarkTheme = true;
   public isSideNavOpen = false;
 
-  public constructor(private _languageService: LanguageService) {
-  }
+  public constructor(private _languageService: LanguageService) {}
 
   public ngOnInit(): void {
     const sideNavOpen = localStorage.getItem('side-nav');
