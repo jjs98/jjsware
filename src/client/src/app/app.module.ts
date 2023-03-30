@@ -20,9 +20,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MyWorkComponent } from './components/my-work/my-work.component';
 import { NgModule } from '@angular/core';
-import { ProfileComponent } from './components/profile/profile.component';
 import { RouterModule } from '@angular/router';
+import { SkillsComponent } from './components/skills/skills.component';
 import { TestComponent } from './components/test/test.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ProfileComponent,
+    MyWorkComponent,
+    SkillsComponent,
     TestComponent
   ],
   imports: [
@@ -62,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'about', component: AboutComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'profile', component: ProfileComponent },
+      { path: 'my-work', component: MyWorkComponent },
+      { path: 'skills', component: SkillsComponent },
       { path: 'test', component: TestComponent }
     ]),
     TranslateModule.forRoot({

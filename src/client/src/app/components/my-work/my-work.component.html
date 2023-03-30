@@ -5,27 +5,23 @@
   </mat-card-header>
   <mat-card-content>
     <mat-divider></mat-divider>
-    <img
-      alt="github-readme-stats"
-      src="https://github-readme-stats.vercel.app/api?username=jjs98&count_private=true&show_icons=true&include_all_commits=true&theme=darcula&locale={{
+    <img alt="github-readme-stats"
+         src="https://github-readme-stats.vercel.app/api?username=jjs98&count_private=true&show_icons=true&include_all_commits=true&theme=darcula&locale={{
         getCurrentLanguage()
-      }}"
-    />
+      }}" />
   </mat-card-content>
 </mat-card>
 <mat-card>
   <mat-card-header>
     <mat-card-title>GitHub</mat-card-title>
-    <mat-card-subtitle>{{ 'profile.languages' | translate }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ 'my-work.languages' | translate }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-divider></mat-divider>
-    <img
-      alt="github-readme-stats-top-langs"
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=jjs98&theme=darcula&locale={{
+    <img alt="github-readme-stats-top-langs"
+         src="https://github-readme-stats.vercel.app/api/top-langs/?username=jjs98&theme=darcula&locale={{
         getCurrentLanguage()
-      }}"
-    />
+      }}" />
   </mat-card-content>
 </mat-card>
 <div *ngIf="getRepositories() as repositories">
@@ -33,19 +29,16 @@
     <mat-card-header>
       <mat-card-title>GitHub</mat-card-title>
       <mat-card-subtitle>
-        <a href="https://github.com/jjs98/{{ name }}" target="blank"
-          >jjs98/{{ name }}</a
-        >
+        <a href="https://github.com/jjs98/{{ name }}"
+           target="blank">jjs98/{{ name }}</a>
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <mat-divider></mat-divider>
-      <img
-        alt="github-readme-stats-pin"
-        src="https://github-readme-stats.vercel.app/api/pin/?username=jjs98&repo={{
+      <img alt="github-readme-stats-pin"
+           src="https://github-readme-stats.vercel.app/api/pin/?username=jjs98&repo={{
           name
-        }}&show_owner=true&theme=darcula"
-      />
+        }}&show_owner=true&theme=darcula" />
     </mat-card-content>
   </mat-card>
 </div>

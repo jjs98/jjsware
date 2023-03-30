@@ -4,12 +4,14 @@
   "app.about": "About",
   "app.home": "Home",
   "app.language": "Sprache",
-  "app.profile": "Profil",
+  "app.theme": "Design",
+  "app.my-work": "Meine Arbeit",
+  "app.skills": "Skills",
   "app.test": "Test",
   "about.title": "Genutzte Software",
-  "home.introduction": "Hallo! Mein Name ist Jens und ich bin ein 24-jähriger Softwareentwickler. Neben der Arbeit entwickle ich gerne Sachen wie diese Website, um mein Wissen ständig zu verbessern. Mehr über meine Interessen kann man auf meinem Profil nachlesen.",
+  "home.introduction": "Hallo! Mein Name ist Jens und ich bin ein 24-jähriger Fullstack Softwareentwickler. Neben der Arbeit entwickle ich gerne Sachen wie diese Website, um mein Wissen ständig zu verbessern. Mehr über meine Interessen kann man auf meinem Profil nachlesen.",
   "home.subtitle": "24, Softwareentwickler",
   "home.title": "Jens Schmitz",
-  "profile.languages": "Sprachen",
+  "my-work.languages": "Sprachen",
   "test.chooseDate": "Wähle ein Datum"
 }

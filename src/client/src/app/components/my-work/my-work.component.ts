@@ -5,10 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  templateUrl: './my-work.component.html',
+  styleUrls: ['./my-work.component.scss']
 })
-export class ProfileComponent {
+export class MyWorkComponent {
   constructor(
     private _translationService: TranslateService,
     private _http: HttpClient
