@@ -1,0 +1,7 @@
+package.json
+pnpm-lock.yaml
+.angular
+dist
+node_modules
+playwright-report
+tests/**

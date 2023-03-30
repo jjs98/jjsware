@@ -1,15 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { AboutComponent } from './components/about/about.component';
+import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule }    from '@angular/forms'; 
+import { BrowserModule } from '@angular/platform-browser';
+import { HomeComponent } from './components/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatDateFnsModule } from '@angular/material-date-fns-adapter';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -19,15 +20,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-import { AboutComponent } from './components/about/about.component';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { NgModule } from '@angular/core';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RouterModule } from '@angular/router';
 import { TestComponent } from './components/test/test.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -39,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     AboutComponent,
     ProfileComponent,
-    TestComponent,
+    TestComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -66,18 +63,18 @@ export function HttpLoaderFactory(http: HttpClient) {
       { path: 'about', component: AboutComponent },
       { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
-      { path: 'test', component: TestComponent },
+      { path: 'test', component: TestComponent }
     ]),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

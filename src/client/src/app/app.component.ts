@@ -1,11 +1,11 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { LanguageService } from './services/language.service';
-import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   @ViewChild(MatSidenav)
@@ -14,8 +14,7 @@ export class AppComponent implements OnInit {
   public isDarkTheme = true;
   public isSideNavOpen = false;
 
-  public constructor(private _languageService: LanguageService) {
-  }
+  public constructor(private _languageService: LanguageService) {}
 
   public ngOnInit(): void {
     const sideNavOpen = localStorage.getItem('side-nav');

@@ -1,10 +1,10 @@
-import { LanguageService } from './../../services/language.service';
 import { Component } from '@angular/core';
+import { LanguageService } from './../../services/language.service';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss'],
+  styleUrls: ['./test.component.scss']
 })
 export class TestComponent {
   public date: Date | undefined = new Date(Date.now());
@@ -33,8 +33,11 @@ export class TestComponent {
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      weekday: 'short',
-    }
-    this.dateAsString = new Intl.DateTimeFormat(currentLanguage, options).format(this.date);
+      weekday: 'short'
+    };
+    this.dateAsString = new Intl.DateTimeFormat(
+      currentLanguage,
+      options
+    ).format(this.date);
   }
 }

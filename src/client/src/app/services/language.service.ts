@@ -1,10 +1,9 @@
-import { Inject, Injectable } from '@angular/core';
-import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LanguageService {
   private readonly english: string = 'en';
@@ -19,12 +18,7 @@ export class LanguageService {
     return this._currentLanguage$.asObservable();
   }
 
-  constructor(
-    private _translate: TranslateService,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    private _adapter: DateAdapter<any>,
-    @Inject(MAT_DATE_LOCALE) private _locale: string
-  ) {
+  constructor(private _translate: TranslateService) {
     _translate.setDefaultLang(this.english);
     const storageLanguage = localStorage.getItem('locale') ?? this.english;
     this.switchLanguage(storageLanguage);
@@ -40,8 +34,6 @@ export class LanguageService {
       if (isLanguageAvailable) {
         localStorage.setItem('locale', language);
         this._translate.use(language);
-        this._locale = language;
-        this._adapter.setLocale(language);
         this._currentLanguage$.next(language);
       }
     }

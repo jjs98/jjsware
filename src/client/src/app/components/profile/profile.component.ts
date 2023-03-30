@@ -1,12 +1,12 @@
+import { GitRepositories, Repository } from '../../models/repository.type';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { Component } from '@angular/core';
-import { GitRepositories, Repository } from '../../models/repository.type';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
   constructor(

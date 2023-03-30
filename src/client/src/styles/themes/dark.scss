@@ -1,4 +1,4 @@
-@use "@angular/material" as mat;
+@use '@angular/material' as mat;
 
 $md-primary: (
   50: #f0fdff,
@@ -29,8 +29,8 @@ $md-primary: (
     A100: #000000,
     A200: #000000,
     A400: #000000,
-    A700: #000000,
-  ),
+    A700: #000000
+  )
 );
 
 $md-accent: (
@@ -62,8 +62,8 @@ $md-accent: (
     A100: #000000,
     A200: #000000,
     A400: #000000,
-    A700: #000000,
-  ),
+    A700: #000000
+  )
 );
 
 $md-warn: (
@@ -95,8 +95,8 @@ $md-warn: (
     A100: #000000,
     A200: #000000,
     A400: #000000,
-    A700: #000000,
-  ),
+    A700: #000000
+  )
 );
 
 $my-app-dark-primary: mat.define-palette($md-primary);
@@ -107,7 +107,7 @@ $my-app-dark-theme: mat.define-dark-theme(
     color: (
       primary: $my-app-dark-primary,
       accent: $my-app-dark-accent,
-      warn: $my-app-dark-warn,
-    ),
+      warn: $my-app-dark-warn
+    )
   )
 );
