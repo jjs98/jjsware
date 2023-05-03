@@ -93,16 +93,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Run Tests
+      - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Install dependencies
-        run: npm ci --cache .npm --prefer-offline
+        run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - name: Install Playwright 
+        run: npx playwright install
  
-      - name: Run Playwright tests
+      - name: Run tests
         run: npx playwright test 
 
       - uses: actions/upload-artifact@v3
