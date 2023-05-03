@@ -8,7 +8,7 @@
     "build:prod": "ng build --configuration production",
     "lint": "ng lint --quiet --fix",
     "e2e": "npx playwright test",
-    "test": "ng test"
+    "test": "ng test --code-coverage --watch=false"
   },
   "private": true,
   "dependencies": {
