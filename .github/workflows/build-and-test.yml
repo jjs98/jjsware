@@ -136,7 +136,7 @@ jobs:
             -Dsonar.tests=client,server
             -Dsonar.exclusions=**/node_modules/**,src/assets/**
             -Dsonar.test.inclusions=**/*.spec.ts
-            -Dsonar.javascript.lcov.reportPaths=client/coverage/**/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=client/coverage/**/*.info
 
   playwright:
     name: Run playwright tests
