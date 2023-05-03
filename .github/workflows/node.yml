@@ -12,7 +12,7 @@ on:
       - .github/workflows/node.yml
 
 jobs:
-  cache-and-install:
+  build:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     defaults:
@@ -52,13 +52,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-  build:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/client
-    steps:
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -68,13 +61,6 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src/client
-    steps:
      # - name: Test
      #   run: pnpm test
 
