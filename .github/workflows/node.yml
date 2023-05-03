@@ -57,6 +57,9 @@ jobs:
     timeout-minutes: 10
     needs: cache-and-install
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Build
         run: pnpm build
         
@@ -65,6 +68,9 @@ jobs:
     timeout-minutes: 10
     needs: cache-and-install
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Lint
         run: pnpm lint
 
@@ -73,6 +79,9 @@ jobs:
     timeout-minutes: 10
     needs: cache-and-install
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
       - name: Install Playwright Browsers
         run: pnpm dlx playwright install --with-deps
 
