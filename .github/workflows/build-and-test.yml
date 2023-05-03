@@ -1,4 +1,4 @@
-name: Node
+name: Build and Test
 on:
   push:
     branches: [ main ]
@@ -86,8 +86,6 @@ jobs:
 
   playwright:
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.33.0-jammy
     timeout-minutes: 10
     steps:
       - name: Checkout
