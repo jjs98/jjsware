@@ -4,12 +4,12 @@ on:
     branches: [ main ]
     paths:
       - src/client/**
-      - .github/workflows/node.yml
+      - .github/workflows/build-and-test.yml
   pull_request:
     branches: [ main ]
     paths:
       - src/client/**
-      - .github/workflows/node.yml
+      - .github/workflows/build-and-test.yml
 
 defaults:
   run:
