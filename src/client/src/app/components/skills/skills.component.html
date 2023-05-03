@@ -1,9 +1,9 @@
-<mat-card>
+<mat-card *ngFor="let skill of skills">
   <mat-card-header>
-    <mat-card-title>C#</mat-card-title>
+    <mat-card-title>{{skill.name}}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-divider></mat-divider>
-    <span>works</span>
+    <span>{{skill.description}}</span>
   </mat-card-content>
 </mat-card>
