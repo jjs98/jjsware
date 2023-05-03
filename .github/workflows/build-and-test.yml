@@ -118,6 +118,23 @@ jobs:
       - name: Run Karma tests
         run: pnpm test
 
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: src
+          args: >
+            -Dsonar.organization=jjs98
+            -Dsonar.projectKey=jjs98_jjsware
+            -Dsonar.verbose=false
+            -Dsonar.sources=src
+            -Dsonar.tests=src
+            -Dsonar.exclusions=**/node_modules/**,src/assets/**
+            -Dsonar.test.inclusions=**/*.spec.ts
+            -Dsonar.javascript.lcov.reportPaths=src/client/coverage/**/lcov.info
+
   playwright:
     runs-on: ubuntu-latest
     timeout-minutes: 10
