@@ -17,6 +17,7 @@ defaults:
 
 jobs:
   build:
+    name: Run Pnpm Build
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -51,6 +52,7 @@ jobs:
         run: pnpm build
         
   lint:
+    name: Run linting
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -85,6 +87,7 @@ jobs:
         run: pnpm lint
 
   karma:
+    name: Run Unittests and SonarCloud
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -133,9 +136,10 @@ jobs:
             -Dsonar.tests=src
             -Dsonar.exclusions=**/node_modules/**,src/assets/**
             -Dsonar.test.inclusions=**/*.spec.ts
-            -Dsonar.javascript.lcov.reportPaths=src/client/coverage/**/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=client/coverage/**/lcov.info
 
   playwright:
+    name: Run playwright tests
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
