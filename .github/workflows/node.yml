@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Node
 on:
   push:
     branches: [ main ]
@@ -10,7 +10,7 @@ on:
     paths:
       - src/client/**
       - .github/workflows/node.yml
-      
+
 jobs:
   cache-and-install:
     timeout-minutes: 60
