@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   public getAvailableLanguages(): string[] {
+    var blub = '';
     return this._languageService.availableLanguages;
   }
 
