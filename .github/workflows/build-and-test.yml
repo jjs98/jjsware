@@ -24,9 +24,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Run normal CI
-        run: ../../.github/actions/pnpm-install
-
+      - uses: actions/pnpm-install-action@v1
+        
       - name: Build client
         run: pnpm build
         
