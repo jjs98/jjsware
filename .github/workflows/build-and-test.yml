@@ -48,7 +48,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build JJSWare
+      - name: Build client
         run: pnpm build
         
   lint:
@@ -221,6 +221,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Build client
+        run: pnpm build
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
