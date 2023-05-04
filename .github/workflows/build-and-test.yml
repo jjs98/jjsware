@@ -21,7 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/pnpm-install.yml
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run normal CI
+        run: ./actions/pnpm-install
 
       - name: Build client
         run: pnpm build
