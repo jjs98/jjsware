@@ -153,7 +153,7 @@ jobs:
         id: tag
         run: |
           if [ ${{ github.ref }} = refs/heads/main ]; then
-              echo "tag=latest" >> $GITHUB_OUTPUT
+              echo "tag=***/jjsware-client:latest" >> $GITHUB_OUTPUT
           else
               echo "tag=${{ steps.meta.outputs.tags }}" >> $GITHUB_OUTPUT
           fi
