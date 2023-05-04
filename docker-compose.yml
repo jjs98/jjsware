@@ -1,18 +1,18 @@
 version: "3.4"
 
 services:
-    client:
-        build:
-          context: ./src/client
-          dockerfile: Dockerfile
-        image: jjs98/jjsware-client
-        ports:
-          - "5000:80"
+  client:
+      build:
+        context: ./src/client
+        dockerfile: Dockerfile
+      image: jjs98/jjsware-client
+      ports:
+        - "5000:80"
 
-    server:
-        build:
-          context: ./src/server
-          dockerfile: Dockerfile
-        image: jjs98/jjsware-server
-        ports:
-          - "5001:80"
+  server:
+      build:
+        context: ./src/server
+        dockerfile: Dockerfile
+      image: jjs98/jjsware-server
+      ports:
+        - "5001:80"
