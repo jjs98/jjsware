@@ -3,11 +3,11 @@
 FROM --platform=linux/arm64/v8 node:latest AS build
 WORKDIR /src/client
 COPY ./ /src/client/
-RUN npm i -g pnpm
-RUN pnpm install
-RUN pnpm build
-# RUN npm install
-# RUN npm run build
+# RUN npm i -g pnpm
+# RUN pnpm install
+# RUN pnpm build
+RUN npm install
+RUN npm run build
 
 FROM build AS final
 FROM arm64v8/nginx
