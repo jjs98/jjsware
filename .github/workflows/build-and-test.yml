@@ -152,14 +152,12 @@ jobs:
       - name: Set tag for docker image
         id: tag
         run: |
-          if [${{ github.ref == 'refs/heads/main' }}]
+          if [${{ github.ref }} == 'refs/heads/main']
           then
               echo "tag=latest" >> $GITHUB_OUTPUT
           else
               echo "tag=${{ steps.meta.outputs.tags }}" >> $GITHUB_OUTPUT
           fi
-        env:
-          REF: ${{ github.ref }}
 
       - name: Build and push client
         uses: docker/build-push-action@v4
