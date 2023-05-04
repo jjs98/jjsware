@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: action/pnpm-install
+      - uses: actions/pnpm-install
 
       - name: Build client
         run: pnpm build
