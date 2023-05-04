@@ -187,13 +187,13 @@ jobs:
         with:
           name: playwright-report
           path: src/client/playwright-report
-          retention-days: 30
+          retention-days: 10
 
   docker:
     name: Build and push docker image
     # needs: [build, lint, karma, playwright]
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -252,7 +252,7 @@ jobs:
       - name: Build and push client
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./src/client
           push: true
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.tag.outputs.tag }}
