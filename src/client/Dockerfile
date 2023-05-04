@@ -1,4 +1,4 @@
-FROM arm64v8/node:18 AS build
+FROM arm64v8/node:18.16.0 AS build
 # FROM node:latest AS build
 WORKDIR /src/client
 COPY ./ /src/client/
