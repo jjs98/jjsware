@@ -193,7 +193,7 @@ jobs:
     name: Build and push docker image
     # needs: [build, lint, karma, playwright]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: .
