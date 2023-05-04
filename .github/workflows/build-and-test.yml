@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v4
+        uses: jjs98/pnpm-install-action@v5
         with:
           directory: 'src/client'
 
