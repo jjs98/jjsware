@@ -121,6 +121,7 @@ jobs:
     needs: [build, lint, karma, playwright]
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    if: success()
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -151,7 +152,7 @@ jobs:
       - name: Set tag for docker image
         id: tag
         run: |
-          if [${{ github.event_name != 'pull_request' }}]
+          if [${{ github.ref == 'refs/heads/master' }}]
           then
               echo "tag=latest" >> $GITHUB_OUTPUT
           else
