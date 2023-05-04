@@ -152,7 +152,7 @@ jobs:
       - name: Set tag for docker image
         id: tag
         run: |
-          if [${{ github.ref == 'refs/heads/master' }}]
+          if [${{ github.ref == 'refs/heads/main' }}]
           then
               echo "tag=latest" >> $GITHUB_OUTPUT
           else
