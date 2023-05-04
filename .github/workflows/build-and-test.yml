@@ -16,7 +16,7 @@ env:
 
 defaults:
   run:
-    working-directory: ${{ env.DIRECTORY }}
+    working-directory: src/client
 
 jobs:
   build:
