@@ -1,1 +1,0 @@
-docker build -f $PSScriptRoot\Dockerfile -t jjs98/jjsware:latest $PSScriptRoot\..
