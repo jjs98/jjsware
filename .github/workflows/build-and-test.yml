@@ -33,6 +33,20 @@ jobs:
         
       - name: Run linting
         run: pnpm lint
+        
+  audit:
+    name: Run audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: jjs98/pnpm-install-action@v6
+        
+      - name: Run audit
+        run: pnpm audit
 
   karma:
     name: Run Unittests and SonarCloud
@@ -123,10 +137,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push client
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ steps.meta.outputs.tags }}
+      - name: Docker build
+        run: pnpm docker:build
+        
+      - name: Docker push
+        run: pnpm docker:push
