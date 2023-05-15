@@ -61,12 +61,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatToolbarModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', pathMatch: 'prefix', redirectTo: 'home' },
       { path: 'about', component: AboutComponent },
       { path: 'home', component: HomeComponent },
       { path: 'my-work', component: MyWorkComponent },
       { path: 'skills', component: SkillsComponent },
-      { path: 'test', component: TestComponent }
+      { path: 'test', component: TestComponent },
+      { path: '**', redirectTo: 'home' }
     ]),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
