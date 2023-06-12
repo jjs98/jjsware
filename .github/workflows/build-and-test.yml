@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v7
+        uses: jjs98/pnpm-install-action@v8
         with:
           no-frozen-lockfile: true
 
@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v7
+        uses: jjs98/pnpm-install-action@v8
         with:
           no-frozen-lockfile: true
         
@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v7
+        uses: jjs98/pnpm-install-action@v8
         with:
           no-frozen-lockfile: true
         
@@ -63,7 +63,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v7
+        uses: jjs98/pnpm-install-action@v8
         with:
           no-frozen-lockfile: true
         
@@ -99,7 +99,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v7
+        uses: jjs98/pnpm-install-action@v8
         with:
           no-frozen-lockfile: true
         
@@ -131,7 +131,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v7
+        uses: jjs98/pnpm-install-action@v8
         with:
           no-frozen-lockfile: true
 
