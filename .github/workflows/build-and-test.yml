@@ -15,7 +15,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
+        uses: jjs98/pnpm-install-action@v9
+        with:
+          no-frozen-lockfile: true
 
       - name: Build client
         run: pnpm build
@@ -29,7 +31,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
+        uses: jjs98/pnpm-install-action@v9
+        with:
+          no-frozen-lockfile: true
         
       - name: Run linting
         run: pnpm lint
@@ -43,7 +47,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
+        uses: jjs98/pnpm-install-action@v9
+        with:
+          no-frozen-lockfile: true
         
       - name: Run audit
         run: pnpm audit
@@ -57,7 +63,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
+        uses: jjs98/pnpm-install-action@v9
+        with:
+          no-frozen-lockfile: true
         
       - name: Run Karma tests
         run: pnpm test
@@ -91,7 +99,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
+        uses: jjs98/pnpm-install-action@v9
+        with:
+          no-frozen-lockfile: true
         
       - name: Install Playwright Browsers
         run: pnpm pw:install
@@ -111,13 +121,19 @@ jobs:
     needs: [build, lint, karma, playwright]
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    strategy:
+      matrix:
+        platform:
+          - linux/arm64v8
     if: success()
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
+        uses: jjs98/pnpm-install-action@v9
+        with:
+          no-frozen-lockfile: true
 
       - name: Build client
         run: pnpm build
