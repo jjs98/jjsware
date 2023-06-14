@@ -1,14 +1,14 @@
 import { Page, expect, test } from '@playwright/test';
 
 test('has title', async ({ page }) => {
-  await page.goto('http://localhost:4200/');
+  await page.goto('http://localhost:4200/', { timeout: 0 });
 
   await expect(page).toHaveTitle(/JJSWare/);
 });
 
 test.describe('sidenav', () => {
   test('can be toggled', async ({ page }) => {
-    await page.goto('http://localhost:4200');
+    await page.goto('http://localhost:4200', { timeout: 0 });
 
     await checkIfSideNavVisible(page, false);
 
@@ -22,7 +22,7 @@ test.describe('sidenav', () => {
   });
 
   test('should have same state after reload', async ({ page }) => {
-    await page.goto('http://localhost:4200');
+    await page.goto('http://localhost:4200', { timeout: 0 });
 
     await checkIfSideNavVisible(page, false);
 
@@ -36,9 +36,13 @@ test.describe('sidenav', () => {
   });
 });
 
-test.describe('language', () => {
+test.describe('en browser language: language', () => {
+  test.use({
+    locale: 'en'
+  });
+
   test('can be switched', async ({ page }) => {
-    await page.goto('http://localhost:4200');
+    await page.goto('http://localhost:4200', { timeout: 0 });
 
     await checkLanguage(page, 'en');
 
@@ -50,7 +54,7 @@ test.describe('language', () => {
   });
 
   test('should be same after reload', async ({ page }) => {
-    await page.goto('http://localhost:4200');
+    await page.goto('http://localhost:4200', { timeout: 0 });
 
     await checkLanguage(page, 'en');
 
@@ -58,6 +62,24 @@ test.describe('language', () => {
     await checkLanguage(page, 'de');
 
     await page.reload();
+    await checkLanguage(page, 'de');
+  });
+
+  test('should be en browser language on first visit', async ({ page }) => {
+    await page.goto('http://localhost:4200', { timeout: 0 });
+
+    await checkLanguage(page, 'en');
+  });
+});
+
+test.describe('de browser language: language', () => {
+  test.use({
+    locale: 'de'
+  });
+
+  test('should be de browser language on first visit', async ({ page }) => {
+    await page.goto('http://localhost:4200', { timeout: 0 });
+
     await checkLanguage(page, 'de');
   });
 });
