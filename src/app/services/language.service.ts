@@ -19,8 +19,9 @@ export class LanguageService {
   }
 
   constructor(private _translate: TranslateService) {
-    _translate.setDefaultLang(this.english);
-    const storageLanguage = localStorage.getItem('locale') ?? this.english;
+    const browserLanguage = this.getBrowserLanguage();
+    _translate.setDefaultLang(browserLanguage);
+    const storageLanguage = localStorage.getItem('locale') ?? browserLanguage;
     this.switchLanguage(storageLanguage);
   }
 
@@ -37,5 +38,10 @@ export class LanguageService {
         this._currentLanguage$.next(language);
       }
     }
+  }
+
+  private getBrowserLanguage(): string {
+    const browserLanguage = this._translate.getBrowserLang();
+    return browserLanguage?.match(/en|de/) ? browserLanguage : this.english;
   }
 }
