@@ -31,7 +31,7 @@ dependencies:
     version: 17.2.1(@angular/animations@17.2.2)(@angular/cdk@17.2.1)(@angular/common@17.2.2)(@angular/core@17.2.2)(@angular/forms@17.2.2)(@angular/platform-browser@17.2.2)(rxjs@7.8.1)
   '@angular/material-date-fns-adapter':
     specifier: ^17.2.1
-    version: 17.2.1(@angular/core@17.2.2)(@angular/material@17.2.1)(date-fns@3.3.1)
+    version: 17.2.1(@angular/core@17.2.2)(@angular/material@17.2.1)(date-fns@2.30.0)
   '@angular/platform-browser':
     specifier: ^17.2.2
     version: 17.2.2(@angular/animations@17.2.2)(@angular/common@17.2.2)(@angular/core@17.2.2)
@@ -60,8 +60,8 @@ dependencies:
     specifier: ^5.3.3
     version: 5.3.3(@popperjs/core@2.11.8)
   date-fns:
-    specifier: ^3.3.1
-    version: 3.3.1
+    specifier: ^2.30.0
+    version: 2.30.0
   jquery:
     specifier: ^3.7.1
     version: 3.7.1
@@ -580,7 +580,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@angular/material-date-fns-adapter@17.2.1(@angular/core@17.2.2)(@angular/material@17.2.1)(date-fns@3.3.1):
+  /@angular/material-date-fns-adapter@17.2.1(@angular/core@17.2.2)(@angular/material@17.2.1)(date-fns@2.30.0):
     resolution: {integrity: sha512-MXuSOMGoeCppRUPJc/61XlbAFOlelVafQg0lDefmqXF7cQ1SyaV1Lm/ed8tWpf1cl8AkxQ/PXN1/WL/X7rkOtQ==}
     peerDependencies:
       '@angular/core': ^17.0.0 || ^18.0.0
@@ -589,7 +589,7 @@ packages:
     dependencies:
       '@angular/core': 17.2.2(rxjs@7.8.1)(zone.js@0.14.4)
       '@angular/material': 17.2.1(@angular/animations@17.2.2)(@angular/cdk@17.2.1)(@angular/common@17.2.2)(@angular/core@17.2.2)(@angular/forms@17.2.2)(@angular/platform-browser@17.2.2)(rxjs@7.8.1)
-      date-fns: 3.3.1
+      date-fns: 2.30.0
       tslib: 2.6.2
     dev: false
 
@@ -1871,7 +1871,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
-    dev: true
 
   /@babel/template@7.23.9:
     resolution: {integrity: sha512-+xrD2BWLpvHKNmX2QbpdpsBaWnRxahMwJjO+KZk2JOElj5nSmKezyS1B4u+QbHMTX69t4ukm6hh9lsYQ7GHCKA==}
@@ -4985,8 +4984,11 @@ packages:
     resolution: {integrity: sha512-GAj5FOq0Hd+RsCGVJxZuKaIDXDf3h6GQoNEjFgbLLI/trgtavwUbSnZ5pVfg27DVCaWjIohryS0JFwIJyT2cMg==}
     dev: true
 
-  /date-fns@3.3.1:
-    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.23.9
     dev: false
 
   /date-format@4.0.14:
@@ -7995,7 +7997,6 @@ packages:
 
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-    dev: true
 
   /regenerator-transform@0.15.2:
     resolution: {integrity: sha512-hfMp2BoF0qOk3uc5V20ALGDS2ddjQaLrdl7xrGXvAIow7qeWRM2VA2HuCHkUKk9slq3VwEwLNK3DFBqDfPGYtg==}
