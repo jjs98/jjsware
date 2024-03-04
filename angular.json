@@ -82,11 +82,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "JJSWare:build:production"
+              "buildTarget": "JJSWare:build:production"
             },
             "development": {
-              "browserTarget": "JJSWare:build:development",
-              "proxyConfig": "proxy.conf.js"
+              "proxyConfig": "proxy.conf.js",
+              "buildTarget": "JJSWare:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "JJSWare:build"
+            "buildTarget": "JJSWare:build"
           }
         },
         "lint": {
