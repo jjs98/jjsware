@@ -11,7 +11,7 @@
     "pw": "npx playwright test",
     "test": "ng test --code-coverage --watch=false",
     "docker:build": "docker build -t jjs98/jjsware-client --platform linux/arm64 .",
-    "docker:push": "docker push -tag jjs98/jjsware-client",
+    "docker:push": "docker push jjs98/jjsware-client",
     "docker:run": "docker run -p 5000:80 --name jjsware-client jjs98/jjsware-client"
   },
   "private": true,
