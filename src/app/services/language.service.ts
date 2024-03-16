@@ -1,5 +1,4 @@
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { Injectable, WritableSignal, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
@@ -8,15 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
   private readonly english: string = 'en';
   private readonly german: string = 'de';
-  private _currentLanguage$: BehaviorSubject<string> = new BehaviorSubject(
-    this.english
-  );
+  private currentLanguage: WritableSignal<string> = signal(this.english);
 
   public availableLanguages: string[] = [this.english, this.german];
-
-  public get currentLanguage$(): Observable<string> {
-    return this._currentLanguage$.asObservable();
-  }
 
   constructor(private _translate: TranslateService) {
     const browserLanguage = this.getBrowserLanguage();
@@ -35,7 +28,7 @@ export class LanguageService {
       if (isLanguageAvailable) {
         localStorage.setItem('locale', language);
         this._translate.use(language);
-        this._currentLanguage$.next(language);
+        this.currentLanguage.set(language);
       }
     }
   }
