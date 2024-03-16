@@ -1,11 +1,42 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import {
+  MatSidenav,
+  MatSidenavContainer,
+  MatSidenavContent
+} from '@angular/material/sidenav';
+import { NgFor, NgIf } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { LanguageService } from './services/language.service';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatDivider } from '@angular/material/divider';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    MatSidenavContainer,
+    MatSidenav,
+    NgIf,
+    MatDivider,
+    MatButton,
+    RouterLink,
+    MatIcon,
+    MatSidenavContent,
+    MatToolbar,
+    MatIconButton,
+    MatMenuTrigger,
+    RouterOutlet,
+    MatMenu,
+    MatMenuItem,
+    NgFor,
+    TranslateModule
+  ]
 })
 export class AppComponent implements OnInit {
   @ViewChild(MatSidenav)

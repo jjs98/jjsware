@@ -1,10 +1,65 @@
+import {
+  MatAnchor,
+  MatButton,
+  MatFabButton,
+  MatIconButton,
+  MatMiniFabButton
+} from '@angular/material/button';
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle
+} from '@angular/material/card';
+import {
+  MatDatepicker,
+  MatDatepickerInput,
+  MatDatepickerToggle
+} from '@angular/material/datepicker';
+import {
+  MatFormField,
+  MatHint,
+  MatLabel,
+  MatSuffix
+} from '@angular/material/form-field';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { LanguageService } from './../../services/language.service';
+import { MatDivider } from '@angular/material/divider';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  styleUrls: ['./test.component.scss'],
+  standalone: true,
+  imports: [
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardContent,
+    MatFormField,
+    MatLabel,
+    MatInput,
+    MatDatepickerInput,
+    FormsModule,
+    MatHint,
+    MatDatepickerToggle,
+    MatSuffix,
+    MatDatepicker,
+    MatCardSubtitle,
+    MatDivider,
+    MatButton,
+    MatAnchor,
+    MatIconButton,
+    MatIcon,
+    MatFabButton,
+    MatMiniFabButton,
+    TranslateModule
+  ]
 })
 export class TestComponent {
   public date: Date | undefined = new Date(Date.now());

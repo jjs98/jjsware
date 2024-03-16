@@ -1,12 +1,33 @@
 import { GitRepositories, Repository } from '../../models/repository.type';
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle
+} from '@angular/material/card';
+import { NgFor, NgIf } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TranslateService } from '@ngx-translate/core';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './my-work.component.html',
-  styleUrls: ['./my-work.component.scss']
+  styleUrls: ['./my-work.component.scss'],
+  standalone: true,
+  imports: [
+    MatCard,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatCardContent,
+    MatDivider,
+    NgIf,
+    NgFor,
+    TranslateModule
+  ]
 })
 export class MyWorkComponent {
   constructor(

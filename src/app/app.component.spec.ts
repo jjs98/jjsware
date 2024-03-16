@@ -5,7 +5,6 @@ import {
   tick
 } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
 import { LanguageService } from './services/language.service';
 
 describe('AppComponent', () => {
@@ -19,8 +18,7 @@ describe('AppComponent', () => {
     ]);
 
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [AppModule],
+      imports: [AppComponent],
       providers: [{ provide: LanguageService, useValue: languageServiceSpyObj }]
     }).compileComponents();
 
