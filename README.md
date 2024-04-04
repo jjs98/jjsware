@@ -23,10 +23,6 @@ Here I realize myself and let my imagination run wild.
   <img alt="Playwright-Logo" src="./src/assets/images/Playwright.png" height="50"/>
 </a>
 
-
-## IT'S ALIVE
-[Visit it here](https://jjsware.de)
-
 ## Used Package manager
 
 Use pnpm to manage the packages.
